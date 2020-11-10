@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/media-queries.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,600;0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/navigation.css">
+  <script src="https://kit.fontawesome.com/13887d64b4.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/dynamic-data.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="left-col">
+      <div class="pillar">
+        <div class="photo-div">
+          <div id="photo"></div>
+        </div>
+        <div class="cv-navigation-div">
+          <ul class="cv-navigation">
+            <li nav-name="experience" navItemName="experience" class="cv-navigation-item">Work Experience</li>
+            <li nav-name="education" navItemName="education" class="cv-navigation-item">Education</li>
+            <li nav-name="skillsets" navItemName="skills" class="cv-navigation-item">Skillsets</li>
+            <li nav-name="references" navItemName="references" class="cv-navigation-item">References</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->  
+
+    <div id="right-col" class="right-col">
+
+      <div class="main-column">
+        <div class="heading-section">
+          <h1 class="name">Hello, I'm <span data-value="firstName" class="info-span">Name</span></h1>
+            <h2 class="job-title">I am a <span data-value="jobTitle" class="info-span">position</span></h2>
+            <h3 class="technologies">HTML, CSS, JavaScript</h3>
+        </div>
+    
+        <!-- MAIN SECTION --> 
+
+        <div class="main-section">
+
+            <div current="true" id="experience" class="experience-section main">
+              <div class="section-header">
+                <div class="icon-wrapper"><i class="fas fa-briefcase fa-2x"></i></div>
+                <h1 class="section-heading">Experience</h1>
+              </div>
+              <div id="experience-item" class="main-item">
+                <div class="timespan">
+                  <span data-value="work.start"></span><span>-</span><span data-value="work.end"></span>
+                </div>
+                <div class="main-item-content">
+                  <h3 data-value="work.company" class="main-name"></h3>
+                  <h4 data-value="work.jobTitle" class="main-type"></h4>
+                  <p data-value="work.description" class="main-desc"></p>
+                </div>
+              </div>
+            </div>
+
+            <div current="false" id="education" class="education-section main">
+              <div class="section-header">
+                <div class="icon-wrapper"><i class="fas fa-book fa-2x"></i></div>
+                <h1 class="section-heading">Education</h1>
+              </div>
+              <div id="education-item" class="main-item">
+                <div class="timespan">
+                  <span data-value="education.start"></span><span>-</span><span data-value="education.end"></span>
+                </div>
+                <div class="main-item-content">
+                  <h3 data-value="school" class="main-name"></h3>
+                  <h4 data-value="degree" class="main-type"></h4>
+                  <p data-value="description" class="main-desc"></p>
+                </div>
+              </div>
+            </div>
+
+            <div current="false" id="skillsets" class="skillsets-section main">
+              <div class="section-header">
+                <div class="icon-wrapper"><i class="fas fa-code fa-2x"></i></div>
+                <h1 class="section-heading">Skillsets</h1>
+              </div>
+              <div class="progress-tracker">
+                <div id="skillsets-item" class="progress-item">
+                  <div data-value="skills.name" class="progress-name"><span></span></div>
+                  <div class="progress-bar-container">
+                    <progress data-fill="skills.percent" max="100" value="0" class="progress-bar"></progress>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div current="false" id="references" class="references-section main">
+              <div class="section-header">
+                <div class="icon-wrapper"><i class="fas fa-link fa-2x"></i></div>
+                <h1 class="section-heading">References</h1>
+              </div>
+              <div id="references-item"  class="info-group">
+                <div class="icon-div"><i data-class="fas fa-link"></i></div>
+                <div class="content-wrapper">
+                  <p data-value="references.name" class="ref-content ref-name">Baka</p>
+                  <p data-value="references.jobTitle" class="ref-content">Baka</p>
+                  <p data-value="references.phone" class="ref-content">Baka</p>
+                  <p data-value="references.email" class="ref-content">Baka</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+      <!-- SIDE COLUMN --> 
+
+      <div class="side-column">
+          
+            <div class="info-section">
+
+                <h2 class="info-group-title">Info</h2>
+                <div id="info-item" class="info-group">
+                  <div class="icon-div"><i data-class="nameIcon"></i></div>
+                  <div class="content-wrapper">
+                    <label data-label="name" class="info-content-label" for=""></label>
+                    <p data-value="name"></p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="social-section">
+                <h2 class="info-group-title">Social Media:</h2>
+
+                <div id="social-item"  class="info-group">
+                  <div class="icon-div"><i data-class="facebookURLIcon"></i></div>
+                  <div class="content-wrapper">
+                    <label data-label="facebookURL" class="info-content-label" for=""></label>
+                    <p data-value="facebookURL" class="content"></p>
+                  </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/navigation.js"></script>
+</body>
+</html>

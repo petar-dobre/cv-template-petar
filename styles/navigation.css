@@ -1,0 +1,31 @@
+.remove {
+  animation-name: dissappear;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dissappear {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.add {
+  animation-name: appear;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -8,22 +8,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,600;0,700;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/navigation.css">
+  <link rel="stylesheet" href="styles/flex.css">
   <script src="https://kit.fontawesome.com/13887d64b4.js"></script>
   <script src="js/config.js"></script>
   <script src="js/dynamic-data.js"></script>
 
-  <title>Document</title>
+  <title>CV Template</title>
 </head>
 <body>
 
-  <div class="wrapper">
-    <div class="left-col">
+  <div class="wrapper flex justify-center">
+    <div class="left-col flex justify-end">
       <div class="pillar">
         <div class="photo-div">
           <div id="photo"></div>
         </div>
         <div class="cv-navigation-div">
-          <ul class="cv-navigation">
+          <ul class="cv-navigation flex-col align-center">
             <li nav-name="experience" navItemName="experience" class="cv-navigation-item">Work Experience</li>
             <li nav-name="education" navItemName="education" class="cv-navigation-item">Education</li>
             <li nav-name="skillsets" navItemName="skills" class="cv-navigation-item">Skillsets</li>
@@ -34,26 +35,23 @@
     </div>
 
     <!-- RIGHT COLUMN -->  
-
-    <div id="right-col" class="right-col">
-
-      <div class="main-column">
-        <div class="heading-section">
+    <div id="right-col" class="right-col flex">
+      <div class="main-column flex-col">
+        <div class="heading-section flex-col align-start">
           <h1 class="name">Hello, I'm <span data-value="firstName" class="info-span">Name</span></h1>
             <h2 class="job-title">I am a <span data-value="jobTitle" class="info-span">position</span></h2>
             <h3 class="technologies">HTML, CSS, JavaScript</h3>
         </div>
     
         <!-- MAIN SECTION --> 
-
         <div class="main-section">
 
-            <div current="true" id="experience" class="experience-section main">
-              <div class="section-header">
+            <div current="true" id="experience" class="experience-section main flex-col">
+              <div class="section-header flex">
                 <div class="icon-wrapper"><i class="fas fa-briefcase fa-2x"></i></div>
                 <h1 class="section-heading">Experience</h1>
               </div>
-              <div id="experience-item" class="main-item">
+              <div id="experience-item" class="main-item flex justify-between">
                 <div class="timespan">
                   <span data-value="work.start"></span><span>-</span><span data-value="work.end"></span>
                 </div>
@@ -65,8 +63,8 @@
               </div>
             </div>
 
-            <div current="false" id="education" class="education-section main">
-              <div class="section-header">
+            <div current="false" id="education" class="education-section main flex-col">
+              <div class="section-header flex">
                 <div class="icon-wrapper"><i class="fas fa-book fa-2x"></i></div>
                 <h1 class="section-heading">Education</h1>
               </div>
@@ -82,12 +80,12 @@
               </div>
             </div>
 
-            <div current="false" id="skillsets" class="skillsets-section main">
-              <div class="section-header">
+            <div current="false" id="skillsets" class="skillsets-section main flex-col">
+              <div class="section-header flex">
                 <div class="icon-wrapper"><i class="fas fa-code fa-2x"></i></div>
                 <h1 class="section-heading">Skillsets</h1>
               </div>
-              <div class="progress-tracker">
+              <div class="progress-tracker flex-col">
                 <div id="skillsets-item" class="progress-item">
                   <div data-value="skills.name" class="progress-name"><span></span></div>
                   <div class="progress-bar-container">
@@ -97,14 +95,14 @@
               </div>
             </div>
 
-            <div current="false" id="references" class="references-section main">
-              <div class="section-header">
+            <div current="false" id="references" class="references-section main flex-col">
+              <div class="section-header flex">
                 <div class="icon-wrapper"><i class="fas fa-link fa-2x"></i></div>
                 <h1 class="section-heading">References</h1>
               </div>
-              <div id="references-item"  class="info-group">
+              <div id="references-item"  class="info-group flex align-center">
                 <div class="icon-div"><i data-class="fas fa-link"></i></div>
-                <div class="content-wrapper">
+                <div class="content-wrapper flex-col">
                   <p data-value="references.name" class="ref-content ref-name">Baka</p>
                   <p data-value="references.jobTitle" class="ref-content">Baka</p>
                   <p data-value="references.phone" class="ref-content">Baka</p>
@@ -115,29 +113,25 @@
         </div>
       </div>
 
-
       <!-- SIDE COLUMN --> 
-
-      <div class="side-column">
+      <div class="side-column flex-col justify-start align-center">
           
-            <div class="info-section">
-
+            <div class="info-section flex-col">
                 <h2 class="info-group-title">Info</h2>
-                <div id="info-item" class="info-group">
+                <div id="info-item" class="info-group flex align-center">
                   <div class="icon-div"><i data-class="nameIcon"></i></div>
-                  <div class="content-wrapper">
+                  <div class="content-wrapper flex-col">
                     <label data-label="name" class="info-content-label" for=""></label>
                     <p data-value="name"></p>
                   </div>
                 </div>
             </div>
 
-            <div class="social-section">
+            <div class="social-section flex-col">
                 <h2 class="info-group-title">Social Media:</h2>
-
-                <div id="social-item"  class="info-group">
+                <div id="social-item"  class="info-group flex align-center">
                   <div class="icon-div"><i data-class="facebookURLIcon"></i></div>
-                  <div class="content-wrapper">
+                  <div class="content-wrapper flex-col">
                     <label data-label="facebookURL" class="info-content-label" for=""></label>
                     <p data-value="facebookURL" class="content"></p>
                   </div>
